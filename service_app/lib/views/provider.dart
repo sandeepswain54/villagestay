@@ -1,8 +1,10 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:service_app/model/user_view_model.dart';
+import 'package:service_app/views/vendor_screens/host_pending_approval_screen.dart';
 
 class ProviderSignupScreen extends StatefulWidget {
   const ProviderSignupScreen({super.key});
@@ -23,7 +25,7 @@ class _ProviderSignupScreenState extends State<ProviderSignupScreen> {
   final _countryController = TextEditingController();
   final _bioController = TextEditingController();
   final _govtIdController = TextEditingController();
-  
+
   File? _profileImage;
   File? _govtIdImage;
   bool _isLoading = false;
@@ -44,31 +46,84 @@ class _ProviderSignupScreenState extends State<ProviderSignupScreen> {
   Future<void> _signup() async {
     if (!_formKey.currentState!.validate()) return;
     if (_profileImage == null || _govtIdImage == null) {
-      Get.snackbar('Error', 'Please upload both profile and ID images');
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Please upload both profile and ID images'),
+        ),
+      );
       return;
     }
 
     setState(() => _isLoading = true);
     try {
-      await UserViewModel().signup(
-        email: _emailController.text.trim(),
-        password: _passwordController.text.trim(),
-        firstName: _firstNameController.text.trim(),
-        lastName: _lastNameController.text.trim(),
-        city: _cityController.text.trim(),
-        country: _countryController.text.trim(),
-        bio: _bioController.text.trim(),
-        profileImage: _profileImage!,
-        isHost: true,
-        serviceType: _serviceTypeController.text.trim(),
-        govtIdImage: _govtIdImage!,
-        govtIdNumber: _govtIdController.text.trim(),
+      // 1. Create Firebase Auth account
+      UserCredential credential = await FirebaseAuth.instance
+          .createUserWithEmailAndPassword(
+            email: _emailController.text.trim(),
+            password: _passwordController.text.trim(),
+          );
+
+      String userId = credential.user!.uid;
+
+      // 2. Upload profile and ID images to Firebase Storage
+      final profileUrl = await _uploadImage(
+        _profileImage!,
+        'sellers/$userId/profile',
+      );
+      final idUrl = await _uploadImage(
+        _govtIdImage!,
+        'sellers/$userId/govt_id',
+      );
+
+      // 3. Prepare seller data
+      final sellerData = {
+        'userId': userId,
+        'email': _emailController.text.trim(),
+        'firstName': _firstNameController.text.trim(),
+        'lastName': _lastNameController.text.trim(),
+        'serviceType': _serviceTypeController.text.trim(),
+        'city': _cityController.text.trim(),
+        'country': _countryController.text.trim(),
+        'bio': _bioController.text.trim(),
+        'profileImage': profileUrl,
+        'govtIdImage': idUrl,
+        'govtIdNumber': _govtIdController.text.trim(),
+        'status': 'pending',
+        'submittedAt': FieldValue.serverTimestamp(),
+      };
+
+      // 4. Save to sellers collection with pending status
+      final docRef = await FirebaseFirestore.instance
+          .collection('sellers')
+          .add(sellerData);
+
+      if (!mounted) return;
+
+      // 5. Redirect to Pending Approval Screen
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(
+          builder:
+              (context) => HostPendingApprovalScreen(
+                sellerId: docRef.id,
+                firstName: _firstNameController.text.trim(),
+              ),
+        ),
       );
     } catch (e) {
-      Get.snackbar('Error', e.toString());
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text('Error: ${e.toString()}')));
     } finally {
-      setState(() => _isLoading = false);
+      if (mounted) {
+        setState(() => _isLoading = false);
+      }
     }
+  }
+
+  Future<String> _uploadImage(File image, String path) async {
+    final ref = FirebaseStorage.instance.ref().child(path);
+    await ref.putFile(image);
+    return await ref.getDownloadURL();
   }
 
   @override
@@ -99,13 +154,16 @@ class _ProviderSignupScreenState extends State<ProviderSignupScreen> {
               TextFormField(
                 controller: _emailController,
                 decoration: const InputDecoration(labelText: 'Email'),
-                validator: (value) => value!.contains('@') ? null : 'Invalid email',
+                validator:
+                    (value) => value!.contains('@') ? null : 'Invalid email',
               ),
               TextFormField(
                 controller: _passwordController,
                 obscureText: true,
                 decoration: const InputDecoration(labelText: 'Password'),
-                validator: (value) => value!.length >= 6 ? null : 'Minimum 6 characters',
+                validator:
+                    (value) =>
+                        value!.length >= 6 ? null : 'Minimum 6 characters',
               ),
               TextFormField(
                 controller: _cityController,
@@ -120,12 +178,16 @@ class _ProviderSignupScreenState extends State<ProviderSignupScreen> {
               TextFormField(
                 controller: _bioController,
                 maxLines: 3,
-                decoration: const InputDecoration(labelText: 'About Your Service'),
+                decoration: const InputDecoration(
+                  labelText: 'About Your Service',
+                ),
                 validator: (value) => value!.isEmpty ? 'Required' : null,
               ),
               TextFormField(
                 controller: _govtIdController,
-                decoration: const InputDecoration(labelText: 'Government ID Number'),
+                decoration: const InputDecoration(
+                  labelText: 'Government ID Number',
+                ),
                 validator: (value) => value!.isEmpty ? 'Required' : null,
               ),
               const SizedBox(height: 20),
@@ -143,9 +205,13 @@ class _ProviderSignupScreenState extends State<ProviderSignupScreen> {
                               border: Border.all(),
                               borderRadius: BorderRadius.circular(8),
                             ),
-                            child: _profileImage == null
-                                ? const Icon(Icons.add_a_photo, size: 50)
-                                : Image.file(_profileImage!, fit: BoxFit.cover),
+                            child:
+                                _profileImage == null
+                                    ? const Icon(Icons.add_a_photo, size: 50)
+                                    : Image.file(
+                                      _profileImage!,
+                                      fit: BoxFit.cover,
+                                    ),
                           ),
                         ),
                       ],
@@ -164,9 +230,13 @@ class _ProviderSignupScreenState extends State<ProviderSignupScreen> {
                               border: Border.all(),
                               borderRadius: BorderRadius.circular(8),
                             ),
-                            child: _govtIdImage == null
-                                ? const Icon(Icons.credit_card, size: 50)
-                                : Image.file(_govtIdImage!, fit: BoxFit.cover),
+                            child:
+                                _govtIdImage == null
+                                    ? const Icon(Icons.credit_card, size: 50)
+                                    : Image.file(
+                                      _govtIdImage!,
+                                      fit: BoxFit.cover,
+                                    ),
                           ),
                         ),
                       ],
@@ -178,12 +248,12 @@ class _ProviderSignupScreenState extends State<ProviderSignupScreen> {
               _isLoading
                   ? const CircularProgressIndicator()
                   : ElevatedButton(
-                      onPressed: _signup,
-                      style: ElevatedButton.styleFrom(
-                        minimumSize: const Size(double.infinity, 50),
-                      ),
-                      child: const Text('Submit Application'),
+                    onPressed: _signup,
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: const Size(double.infinity, 50),
                     ),
+                    child: const Text('Submit Application'),
+                  ),
             ],
           ),
         ),
