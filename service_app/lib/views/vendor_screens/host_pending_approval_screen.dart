@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:service_app/views/host_home.dart';
@@ -207,12 +209,7 @@ class _HostPendingApprovalScreenState extends State<HostPendingApprovalScreen> {
                       ),
                       builder: (context, snapshot) {
                         final dots =
-                            '.' *
-                            ((snapshot.connectionState == ConnectionState.active
-                                        ? snapshot.data as int?
-                                        : 0) %
-                                    4 +
-                                1);
+                            '.' * (((snapshot.data as int?) ?? 0) % 4 + 1);
                         return Text(
                           'Waiting for approval$dots',
                           style: TextStyle(

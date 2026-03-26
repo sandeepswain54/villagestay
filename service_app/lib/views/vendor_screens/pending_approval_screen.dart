@@ -208,12 +208,7 @@ class _PendingApprovalScreenState extends State<PendingApprovalScreen> {
                       ),
                       builder: (context, snapshot) {
                         final dots =
-                            '.' *
-                            ((snapshot.connectionState == ConnectionState.active
-                                        ? snapshot.data as int?
-                                        : 0)! %
-                                    4 +
-                                1);
+                            '.' * (((snapshot.data as int?) ?? 0) % 4 + 1);
                         return Text(
                           'Waiting for approval$dots',
                           style: TextStyle(
