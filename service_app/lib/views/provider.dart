@@ -65,15 +65,43 @@ class _ProviderSignupScreenState extends State<ProviderSignupScreen> {
 
       String userId = credential.user!.uid;
 
-      // 2. Upload profile and ID images to Firebase Storage
-      final profileUrl = await _uploadImage(
-        _profileImage!,
-        'sellers/$userId/profile',
-      );
-      final idUrl = await _uploadImage(
-        _govtIdImage!,
-        'sellers/$userId/govt_id',
-      );
+      // 2. Upload profile and ID images to Firebase Storage (with fallback)
+      String profileUrl = '';
+      String idUrl = '';
+
+      try {
+        profileUrl = await _uploadImage(
+          _profileImage!,
+          'sellers/$userId/profile.jpg',
+        );
+      } catch (e) {
+        debugPrint('Profile image upload failed: $e');
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text('Note: Profile image upload failed, continuing...'),
+              duration: Duration(seconds: 2),
+            ),
+          );
+        }
+      }
+
+      try {
+        idUrl = await _uploadImage(
+          _govtIdImage!,
+          'sellers/$userId/govt_id.jpg',
+        );
+      } catch (e) {
+        debugPrint('ID image upload failed: $e');
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text('Note: ID image upload failed, continuing...'),
+              duration: Duration(seconds: 2),
+            ),
+          );
+        }
+      }
 
       // 3. Prepare seller data
       final sellerData = {
@@ -121,9 +149,20 @@ class _ProviderSignupScreenState extends State<ProviderSignupScreen> {
   }
 
   Future<String> _uploadImage(File image, String path) async {
-    final ref = FirebaseStorage.instance.ref().child(path);
-    await ref.putFile(image);
-    return await ref.getDownloadURL();
+    try {
+      final ref = FirebaseStorage.instance.ref().child(path);
+      debugPrint('Uploading image to: $path');
+
+      final uploadTask = ref.putFile(image);
+      await uploadTask;
+
+      final downloadUrl = await ref.getDownloadURL();
+      debugPrint('Image uploaded successfully: $downloadUrl');
+      return downloadUrl;
+    } catch (e) {
+      debugPrint('Error uploading image to $path: $e');
+      rethrow;
+    }
   }
 
   @override
