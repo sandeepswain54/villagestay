@@ -14,7 +14,7 @@
         tools:ignore="QueryAllPackagesPermission" />
 
     <application
-        android:label="Upyogi App"
+        android:label="Village Stay"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         

@@ -46,7 +46,14 @@ class _OpenstreetState extends State<Openstreet> {
   Future<void> fetchCoordinatesPoints(String location) async {
     final url = Uri.parse(
         "https://nominatim.openstreetmap.org/search?format=json&q=$location");
-    final response = await http.get(url);
+
+    final response = await http.get(
+      url,
+      headers: {
+        "User-Agent":
+            "UpyogiApp/1.0 (contact@upyogi.com)" // ✅ required by Nominatim
+      },
+    );
 
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
@@ -68,16 +75,20 @@ class _OpenstreetState extends State<Openstreet> {
   Future<void> fetchRoute() async {
     if (_currentLocation == null || _destination == null) return;
 
-    final url = Uri.parse("http://router.project-osrm.org/route/v1/driving/"
+    final url = Uri.parse("https://router.project-osrm.org/route/v1/driving/"
         "${_currentLocation!.longitude},${_currentLocation!.latitude};"
-        "${_destination!.longitude},${_destination!.latitude}?overview=full");
+        "${_destination!.longitude},${_destination!.latitude}?overview=full&geometries=polyline");
 
     final response = await http.get(url);
 
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
-      final geometry = data['routes'][0]["geometry"];
-      _decodePolyline(geometry);
+      if (data["routes"] != null && data["routes"].isNotEmpty) {
+        final geometry = data['routes'][0]["geometry"];
+        _decodePolyline(geometry);
+      } else {
+        errorMessage("No route found between locations.");
+      }
     } else {
       errorMessage("Failed to fetch route. Try again later");
     }
@@ -129,7 +140,6 @@ class _OpenstreetState extends State<Openstreet> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     
       body: Stack(
         children: [
           isloading
@@ -146,7 +156,8 @@ class _OpenstreetState extends State<Openstreet> {
                     TileLayer(
                       urlTemplate:
                           "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-                      userAgentPackageName: 'com.upyogi.service_app', // 🔧 Important for 403 fix
+                      userAgentPackageName:
+                          'com.upyogi.service_app', // ✅ important for OSM
                     ),
                     CurrentLocationLayer(
                       style: LocationMarkerStyle(

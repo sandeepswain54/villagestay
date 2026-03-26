@@ -259,7 +259,7 @@ SizedBox(
                                    Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => HomePlacesScreen(), // Your PlanTrip screen
+        builder: (context) => PlanTripScreen(), // Your PlanTrip screen
       ),
     );
                                 },
@@ -306,9 +306,9 @@ SizedBox(
                 scrollDirection: Axis.horizontal,
                 padding: EdgeInsets.symmetric(horizontal: 16),
                 children: [
-                  offerCard('assets/travel.avif'),
-                  offerCard('assets/travel2.avif'),
-                  offerCard('assets/travel3.jpg'),
+                  offerCard('assets/yu.jpg'),
+                  offerCard('assets/yu2.jpg'),
+                  offerCard('assets/yu3.jpg'),
                 ],
               ),
             ),

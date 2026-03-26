@@ -1,7 +1,6 @@
-import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/foundation.dart';
-import 'chat_service.dart';
-
+import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:service_app/Chat_Bot/chat_service.dart';
 
 class ChatMessage {
   final String text;
@@ -14,15 +13,18 @@ class ChatMessage {
     required this.timestamp,
   });
 }
+
 class ChatProvider with ChangeNotifier {
-  final TogetherAIService _aiService;
+  final GroqService _aiService; // Changed to GroqService
   List<ChatMessage> _messages = [];
   bool _isLoading = false;
   String? _lastError;
   bool _isConnected = true;
+  bool _hasWelcomed = false;
 
   ChatProvider(this._aiService) {
     _initConnectivity();
+    _addWelcomeMessage();
   }
 
   List<ChatMessage> get messages => _messages;
@@ -38,50 +40,39 @@ class ChatProvider with ChangeNotifier {
     });
   }
 
-    Future<void> sendMessage(String message) async {
+  void _addWelcomeMessage() {
+    if (!_hasWelcomed && _messages.isEmpty) {
+      _messages.add(ChatMessage(
+        text: 'Welcome to Village Stay! 🌿 How can I help you with your village tourism experience today?',
+        isUser: false,
+        timestamp: DateTime.now(),
+      ));
+      _hasWelcomed = true;
+      notifyListeners();
+    }
+  }
+
+  Future<void> sendMessage(String message) async {
     if (message.trim().isEmpty) return;
-    
-    debugPrint('Sending message: $message');
-    
+
     _addMessage(message, true);
     _isLoading = true;
     notifyListeners();
 
     try {
-      if (!_isConnected) {
-        throw Exception('No internet connection');
-      }
+      if (!_isConnected) throw Exception('No internet connection');
 
       final response = await _aiService.generateResponse(message);
-      debugPrint('Received response: $response');
       _addMessage(response, false);
     } catch (e) {
-      debugPrint('Error details: $e');
       _lastError = e.toString();
-      _addMessage(_getErrorMessage(e), false);
+      // Fallback response will be handled by the service itself
+      _addMessage('I apologize, but I\'m experiencing technical difficulties. Please try again shortly.', false);
     } finally {
       _isLoading = false;
       notifyListeners();
     }
   }
-
-  String _getErrorMessage(dynamic error) {
-  final message = error.toString();
-  
-  if (message.contains('No internet')) {
-    return 'Please check your internet connection';
-  } else if (message.contains('timed out')) {
-    return 'The request took too long. Please try again';
-  } else if (message.contains('API key') || message.contains('401')) {
-    return 'API authentication failed. Please check your configuration';
-  } else if (message.contains('500')) {
-    return 'Server error. Please try again later';
-  } else if (message.contains('model')) {
-    return 'Model configuration error';
-  }
-  
-  return 'Error: ${message.split(':').last.trim()}'; // More specific error
-}
 
   void _addMessage(String text, bool isUser) {
     _messages.add(ChatMessage(
@@ -90,6 +81,13 @@ class ChatProvider with ChangeNotifier {
       timestamp: DateTime.now(),
     ));
     _lastError = null;
+    notifyListeners();
+  }
+
+  void clearChat() {
+    _messages.clear();
+    _hasWelcomed = false;
+    _addWelcomeMessage();
     notifyListeners();
   }
 }

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:service_app/Chat_Bot/chat_screen.dart';
 import 'package:service_app/Posting_Village/home_village.dart';
 import 'package:service_app/SHOPING/home_shop.dart';
 import 'package:service_app/views/Host_Screens/booking.dart';
 import 'package:service_app/model/Screens_home/acccount_screen.dart';
 import 'package:service_app/OpenStreet/openstreet.dart';
-import 'package:service_app/Tinder%20Matching/PlanTripScreen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -27,11 +27,11 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
 
   final List<Widget> screens = [
-    HomePage(),           // Home Screen
-    SellerOnboardingScreen(),    // Saved / Trip Planner Screen
-    Booking(),        // Chat Screen
-    AccountScreen(),     // Profile Screen
-    Openstreet(),        // Find Path Screen
+    HomePage(),
+    SellerOnboardingScreen(),
+    Booking(),
+    AccountScreen(),
+    Openstreet(),
   ];
 
   @override
@@ -41,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
         flexibleSpace: Container(
           decoration: const BoxDecoration(
             gradient: LinearGradient(
-              colors: [Color(0xFFFFFFFF), Color(0xFF967BB6)]  ,
+              colors: [Color(0xFFFFFFFF), Color(0xFF967BB6)],
               begin: Alignment.centerLeft,
               end: Alignment.centerRight,
             ),
@@ -55,7 +55,6 @@ class _HomeScreenState extends State<HomeScreen> {
             fontWeight: FontWeight.bold,
           ),
         ),
-        automaticallyImplyLeading: false,
         centerTitle: true,
         elevation: 0,
       ),
@@ -67,13 +66,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ? FloatingActionButton(
               onPressed: () {
                 setState(() => _showUnreadBadge = false);
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const ChatScreen(),
-                    fullscreenDialog: true,
-                  ),
-                );
+                Get.to(() => ChatScreen()); // Uses provider globally
               },
               backgroundColor: Colors.blue[600],
               child: Stack(
@@ -96,48 +89,21 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             )
           : null,
-
-      /// --- CUSTOM PILL-SHAPED BOTTOM BAR ---
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
         child: Container(
-          padding: const EdgeInsets.symmetric(
-            vertical: 16, // height of the bar
-          ),
+          padding: const EdgeInsets.symmetric(vertical: 16),
           decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.circular(30), // pill shape
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black12,
-                blurRadius: 8,
-                offset: Offset(0, 3),
-              ),
-            ],
+            borderRadius: BorderRadius.circular(30),
+            boxShadow: const [BoxShadow(color: Colors.black12, blurRadius: 8, offset: Offset(0, 3))],
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               _buildNavItem(Icons.home, "Home", 0),
               _buildNavItem(Icons.save_rounded, "Upload", 1),
-              Stack(
-                children: [
-                  _buildNavItem(Icons.message, "Feed", 2),
-                  if (_showUnreadBadge)
-                    Positioned(
-                      top: 2,
-                      right: 2,
-                      child: Container(
-                        width: 8,
-                        height: 8,
-                        decoration: BoxDecoration(
-                          color: Colors.red,
-                          shape: BoxShape.circle,
-                        ),
-                      ),
-                    ),
-                ],
-              ),
+              _buildNavItem(Icons.message, "Feed", 2),
               _buildNavItem(Icons.person, "Profile", 3),
               _buildNavItem(Icons.map, "Path", 4),
             ],
@@ -147,42 +113,26 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  /// Build each navigation item (icon + text when selected)
   Widget _buildNavItem(IconData icon, String label, int index) {
     bool isSelected = selelectedIndex == index;
     return GestureDetector(
       onTap: () {
-        setState(() {
-          selelectedIndex = index;
-        });
+        setState(() => selelectedIndex = index);
       },
       child: AnimatedContainer(
-        duration: Duration(milliseconds: 250),
-        padding: EdgeInsets.symmetric(
-          horizontal: 20,
-          vertical: 10,
-        ),
+        duration: const Duration(milliseconds: 250),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         decoration: BoxDecoration(
           color: isSelected ? Colors.purple.shade100 : Colors.transparent,
           borderRadius: BorderRadius.circular(20),
         ),
         child: Row(
           children: [
-            Icon(
-              icon,
-              size: 15, // icon size
-              color: isSelected ? Colors.purple : Colors.black,
-            ),
+            Icon(icon, size: 15, color: isSelected ? Colors.purple : Colors.black),
             if (isSelected) ...[
               const SizedBox(width: 6),
-              Text(
-                label,
-                style: TextStyle(
-                  color: Colors.purple,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ],
+              Text(label, style: const TextStyle(color: Colors.purple, fontWeight: FontWeight.w600)),
+            ]
           ],
         ),
       ),
