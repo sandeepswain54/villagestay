@@ -47,3 +47,10 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# API Keys and sensitive configuration
+lib/CORE/stripe_key.dart
+lib/Payment_strip/stripe_payment_service.dart
+lib/Payment/payment_gateway.dart
+lib/Chat_Bot/chat_service.dart
+lib/config/ifconfig.dart
