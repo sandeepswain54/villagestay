@@ -209,8 +209,6 @@ class _SwipeCardScreenState extends State<SwipeCardScreen> {
             child:
                 trip.profileImage.startsWith('assets/')
                     ? Image.asset(trip.profileImage, fit: BoxFit.cover)
-                    : trip.profileImage.startsWith('http')
-                    ? Image.network(trip.profileImage, fit: BoxFit.cover)
                     : Image.file(File(trip.profileImage), fit: BoxFit.cover),
           ),
           // Gradient Overlay

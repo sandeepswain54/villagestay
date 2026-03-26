@@ -27,13 +27,6 @@ class TripDetailScreen extends StatelessWidget {
                       width: double.infinity,
                       fit: BoxFit.cover,
                     )
-                    : firstImage.startsWith('http')
-                    ? Image.network(
-                      firstImage,
-                      height: 250,
-                      width: double.infinity,
-                      fit: BoxFit.cover,
-                    )
                     : Image.file(
                       File(firstImage),
                       height: 250,

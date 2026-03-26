@@ -2,7 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_storage/firebase_storage.dart';
+import 'package:path_provider/path_provider.dart';
 import 'trip_model.dart';
 import 'trip_data.dart';
 import 'swipe_card_screen.dart';
@@ -126,30 +126,42 @@ class _PlanTripScreenState extends State<PlanTripScreen> {
 
     try {
       String tripId = DateTime.now().millisecondsSinceEpoch.toString();
-      List<String> uploadedImageUrls = [];
+      List<String> localImagePaths = [];
 
-      // Upload images to Firebase Storage
-      for (int i = 0; i < selectedImages.length; i++) {
-        try {
-          final ref = FirebaseStorage.instance.ref().child(
-            'travel_profiles/$tripId/image_$i.jpg',
-          );
-          await ref.putFile(selectedImages[i]);
-          String imageUrl = await ref.getDownloadURL();
-          uploadedImageUrls.add(imageUrl);
-        } catch (e) {
-          debugPrint('Error uploading image $i: $e');
-          // Continue even if image upload fails
+      // Save images to local storage
+      try {
+        final appDir = await getApplicationDocumentsDirectory();
+        final tripDir = Directory('${appDir.path}/travel_profiles/$tripId');
+
+        // Create directory if it doesn't exist
+        if (!await tripDir.exists()) {
+          await tripDir.create(recursive: true);
         }
+
+        // Copy selected images to local directory
+        for (int i = 0; i < selectedImages.length; i++) {
+          try {
+            final fileName = 'image_$i.jpg';
+            final savedImage = await selectedImages[i].copy(
+              '${tripDir.path}/$fileName',
+            );
+            localImagePaths.add(savedImage.path);
+          } catch (e) {
+            debugPrint('Error saving image $i: $e');
+            // Continue even if image save fails
+          }
+        }
+      } catch (e) {
+        debugPrint('Error accessing local storage: $e');
       }
 
-      // Create trip model with uploaded image URLs
+      // Create trip model with local image paths
       final newTrip = TripModel(
         id: tripId,
         name: nameController.text.trim(),
         profileImage:
-            uploadedImageUrls.isNotEmpty
-                ? uploadedImageUrls[0]
+            localImagePaths.isNotEmpty
+                ? localImagePaths[0]
                 : 'assets/default_profile.png',
         description: descController.text.trim(),
         budget: int.parse(budgetController.text.trim()),
@@ -161,7 +173,7 @@ class _PlanTripScreenState extends State<PlanTripScreen> {
         personalityType: selectedPersonality!,
         age: int.parse(ageController.text.trim()),
         gender: selectedGender,
-        imagePaths: uploadedImageUrls,
+        imagePaths: localImagePaths,
       );
 
       // Save to Firestore
@@ -182,7 +194,7 @@ class _PlanTripScreenState extends State<PlanTripScreen> {
             'personalityType': newTrip.personalityType,
             'age': newTrip.age,
             'gender': newTrip.gender,
-            'imagePaths': uploadedImageUrls,
+            'imagePaths': localImagePaths,
             'createdAt': FieldValue.serverTimestamp(),
           });
 
