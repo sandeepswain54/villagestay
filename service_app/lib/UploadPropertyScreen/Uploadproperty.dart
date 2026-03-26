@@ -91,12 +91,6 @@ class _UploadPropertyScreenState extends State<UploadPropertyScreen> {
       );
       return;
     }
-    if (_images.length < 3) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Please upload at least 3 images')),
-      );
-      return;
-    }
 
     setState(() {
       _isUploading = true;
@@ -105,9 +99,27 @@ class _UploadPropertyScreenState extends State<UploadPropertyScreen> {
     });
 
     try {
-      // 1. Upload images to Firebase Storage
-      setState(() => _currentUploadPhase = "Preparing image upload...");
-      final imageUrls = await _uploadImages();
+      // 1. Upload images to Firebase Storage (with fallback)
+      List<String> imageUrls = [];
+      setState(() => _currentUploadPhase = "Uploading images...");
+
+      try {
+        imageUrls = await _uploadImages();
+      } catch (imageError) {
+        debugPrint('Image upload failed: $imageError');
+        // Continue without images - user can add them later
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text(
+                'Note: Images upload failed. Continuing without images...',
+              ),
+              duration: Duration(seconds: 2),
+            ),
+          );
+        }
+        imageUrls = []; // Empty images list, will be added later
+      }
 
       // 2. Process amenities
       setState(() => _currentUploadPhase = "Processing amenities...");
@@ -143,7 +155,7 @@ class _UploadPropertyScreenState extends State<UploadPropertyScreen> {
 
       // 5. Upload to Firestore with pending status
       setState(() {
-        _currentUploadPhase = "Uploading to database...";
+        _currentUploadPhase = "Saving to database...";
         _uploadProgress = 0.9;
       });
 
@@ -183,9 +195,12 @@ class _UploadPropertyScreenState extends State<UploadPropertyScreen> {
       debugPrint('Upload error: $e');
       debugPrint('Stack trace: $stack');
       if (!mounted) return;
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(SnackBar(content: Text('Upload failed: ${e.toString()}')));
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Upload failed: ${e.toString()}'),
+          duration: const Duration(seconds: 4),
+        ),
+      );
     } finally {
       if (mounted) {
         setState(() {
@@ -225,7 +240,7 @@ class _UploadPropertyScreenState extends State<UploadPropertyScreen> {
                     children: [
                       // Image Upload Section
                       const Text(
-                        'Property Images (Min 3)',
+                        'Property Images (Optional)',
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
