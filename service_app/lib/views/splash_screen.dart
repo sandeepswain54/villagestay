@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-
 import 'package:service_app/views/login.dart';
 import 'package:service_app/views/home_screen.dart';
 import 'package:service_app/views/onboarding_screen.dart';
