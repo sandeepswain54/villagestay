@@ -20,8 +20,7 @@ import 'package:service_app/Posting_Village/hotel_detail_screen.dart';
 import 'package:service_app/Posting_Village/village_extension.dart';
 import 'dart:convert';
 
-import 'package:service_app/Tinder%20Matching/PlanTripScreen.dart';
-import 'package:service_app/Travel%20Tinder%20Match/travelhome.dart'; // Add this import
+import 'package:service_app/Tinder%20Matching/PlanTripScreen.dart'; // Add this import
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -29,247 +28,503 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xFFFAFAFA),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Top Banner
-            Stack(
-              children: [
-                Image.asset(
-                  'assets/ty1.jpg', // Replace with top banner image
-                  width: double.infinity,
-                  height: 250,
-                  fit: BoxFit.cover,
+            // ═══════════════════════════════════════
+            // HERO SECTION WITH GREETING & BACKGROUND
+            // ═══════════════════════════════════════
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(24),
+                  bottomRight: Radius.circular(24),
                 ),
-                Positioned(
-                  top: 40,
-                  left: 20,
-                  right: 20,
-                  child: Column(
-                    children: [
-                      
-                      SizedBox(height: 10),
-                      Text(
-                        "Welcome to Village Stay",
-                        style: TextStyle(
-                          color: Colors.red,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 26,
+                image: DecorationImage(
+                  image: AssetImage('assets/ty1.jpg'),
+                  fit: BoxFit.cover,
+                  colorFilter: ColorFilter.mode(
+                    Colors.black.withOpacity(0.3),
+                    BlendMode.darken,
+                  ),
+                ),
+              ),
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(24),
+                    bottomRight: Radius.circular(24),
+                  ),
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      Colors.transparent,
+                      Colors.black.withOpacity(0.4),
+                    ],
+                  ),
+                ),
+                padding: EdgeInsets.fromLTRB(16, 16, 16, 32),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // Top Header with notification and profile
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Hello Traveler! 👋",
+                                style: TextStyle(
+                                  color: Colors.white70,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              SizedBox(height: 4),
+                              Text(
+                                "Welcome Back",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
-                        textAlign: TextAlign.center,
+                        Container(
+                          padding: EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                            color: Colors.white.withOpacity(0.2),
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Icon(
+                            Icons.notifications_none,
+                            color: Colors.white,
+                            size: 24,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 24),
+                    // Main Heading
+                    Text(
+                      "Ready For Your Next Amazing Adventure Trip Today?",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold,
+                        height: 1.3,
                       ),
-                      SizedBox(height: 5),
-                    
-                      SizedBox(height: 10),
-                      ElevatedButton(
+                    ),
+                    SizedBox(height: 20),
+                    // Quick Action Button
+                    Container(
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color(0xFF4CAF50).withOpacity(0.3),
+                            blurRadius: 12,
+                            offset: Offset(0, 4),
+                          ),
+                        ],
+                      ),
+                      child: ElevatedButton.icon(
                         onPressed: () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => HomePlacesScreen(), // Navigate to TravelHomeScreen
+                              builder: (context) => HomePlacesScreen(),
                             ),
                           );
                         },
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.green,
+                          backgroundColor: Color(0xFF4CAF50),
+                          padding: EdgeInsets.symmetric(vertical: 12),
                           shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8)),
+                            borderRadius: BorderRadius.circular(16),
+                          ),
                         ),
-                        child: Text(
-                          "Check Nearby Locations",
+                        icon: Icon(Icons.location_on, size: 20),
+                        label: Text(
+                          "Explore Nearby",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontSize: 16,
+                            fontSize: 15,
                             color: Colors.white,
                           ),
                         ),
                       ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+
+            SizedBox(height: 24),
+
+            // ═══════════════════════════════════════
+            // SEARCH BAR
+            // ═══════════════════════════════════════
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: GestureDetector(
+                onTap: () async {
+                  final result = await showSearch<String>(
+                    context: context,
+                    delegate: CitySearchDelegate(),
+                  );
+
+                  if (result != null && result.isNotEmpty) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SearchResultsScreen(query: result),
+                      ),
+                    );
+                  }
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(50),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.08),
+                        blurRadius: 12,
+                        offset: Offset(0, 2),
+                      ),
                     ],
                   ),
+                  child: AbsorbPointer(
+                    child: TextField(
+                      decoration: InputDecoration(
+                        hintText: "Search place, city...",
+                        hintStyle: TextStyle(color: Colors.grey[400]),
+                        prefixIcon: Icon(Icons.search, color: Colors.grey[600]),
+                        suffixIcon: Container(
+                          margin: EdgeInsets.all(8),
+                          decoration: BoxDecoration(
+                            color: Color(0xFF4CAF50),
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Icon(Icons.tune, color: Colors.white, size: 20),
+                        ),
+                        border: InputBorder.none,
+                        contentPadding: EdgeInsets.symmetric(
+                          horizontal: 8,
+                          vertical: 14,
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
-              ],
+              ),
             ),
 
-            SizedBox(height: 10),
+            SizedBox(height: 24),
 
-            // Search Bar
-          // Search Bar - Modified to open city selection
-// In your HomePage class, modify the search bar widget:
-// In HomePage class, replace the search bar widget with:
-// In HomePage class, replace the search bar widget with:
-Padding(
-  padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 10),
-  child: GestureDetector(
-    onTap: () async {
-      final result = await showSearch<String>(
-        context: context,
-        delegate: CitySearchDelegate(),
-      );
+            // ═══════════════════════════════════════
+            // CATEGORY CHIPS
+            // ═══════════════════════════════════════
+            SizedBox(
+              height: 48,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                padding: EdgeInsets.symmetric(horizontal: 16),
+                children: [
+                  _categoryChip('🏖️ Beach', true),
+                  _categoryChip('⛰️ Mountains', false),
+                  _categoryChip('🌲 Forest', false),
+                  _categoryChip('🏛️ Heritage', false),
+                  _categoryChip('🎪 Events', false),
+                ],
+              ),
+            ),
 
-      if (result != null && result.isNotEmpty) {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => SearchResultsScreen(query: result),
-          ),
-        );
-      }
-    },
-    child: AbsorbPointer(
-      child: TextField(
-        decoration: InputDecoration(
-          hintText: "Search city, state, or hotel...",
-          prefixIcon: const Icon(Icons.search),
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(30),
-            borderSide: BorderSide.none,
-          ),
-          filled: true,
-          fillColor: Colors.grey[200],
-        ),
-      ),
-    ),
-  ),
-),
+            SizedBox(height: 28),
 
-            SizedBox(height: 20),
+            // ═══════════════════════════════════════
+            // POPULAR CHOICE PLACES SECTION
+            // ═══════════════════════════════════════
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Popular Choice Places",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                      color: Colors.black87,
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SearchResultsScreen(query: 'all'),
+                        ),
+                      );
+                    },
+                    child: Text(
+                      "See All",
+                      style: TextStyle(
+                        color: Color(0xFF4CAF50),
+                        fontWeight: FontWeight.w600,
+                        fontSize: 14,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 12),
 
-            // Cities Row
-         // In HomePage class, update the Cities Row ListView:
-SizedBox(
-  height: 100,
-  child: ListView(
-    scrollDirection: Axis.horizontal,
-    padding: EdgeInsets.symmetric(horizontal: 16),
-    children: [
-      GestureDetector(
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => SearchResultsScreen(query: 'Odisha'),
+            // Popular Places Cards
+            SizedBox(
+              height: 200,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                padding: EdgeInsets.symmetric(horizontal: 16),
+                children: [
+                  _placeCard(
+                    'assets/odisha.jpg',
+                    'Odisha Paradise',
+                    'East Coast',
+                    '/odisha',
+                    context,
+                  ),
+                  _placeCard(
+                    'assets/hi1.jpg',
+                    'Kerala Backwaters',
+                    'South India',
+                    '/kerala',
+                    context,
+                  ),
+                  _placeCard(
+                    'assets/hi.jpg',
+                    'Sikkim Hills',
+                    'North-East',
+                    '/sikkim',
+                    context,
+                  ),
+                ],
+              ),
             ),
-          );
-        },
-        child: cityCard('assets/odisha.jpg', 'Odisha'),
-      ),
-      GestureDetector(
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => SearchResultsScreen(query: 'Kerala'),
-            ),
-          );
-        },
-        child: cityCard('assets/hi1.jpg', 'Kerala'),
-      ),
-      GestureDetector(
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => SearchResultsScreen(query: 'Sikkim'),
-            ),
-          );
-        },
-        child: cityCard('assets/hi.jpg', 'Sikkim'),
-      ),
-      GestureDetector(
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => SearchResultsScreen(query: 'Hyderabad'),
-            ),
-          );
-        },
-        child: cityCard('assets/hi2.jpg', 'Telangana'),
-      ),
-        GestureDetector(
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => SearchResultsScreen(query: 'Punjab'),
-            ),
-          );
-        },
-        child: cityCard('assets/hi3.jpg', 'Punjab'),
-      ),
-        GestureDetector(
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => SearchResultsScreen(query: 'Hyderabad'),
-            ),
-          );
-        },
-        child: cityCard('assets/hy.png', 'View All'),
-      ),
-    ],
-  ),
-),
 
-            SizedBox(height: 20),
+            SizedBox(height: 28),
 
-            // Relax Banner
+            // ═══════════════════════════════════════
+            // FEATURED TRIP CARD (On Going)
+            // ═══════════════════════════════════════
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(12),
+                borderRadius: BorderRadius.circular(20),
+                child: Stack(
+                  children: [
+                    Image.asset(
+                      'assets/ty2.avif',
+                      width: double.infinity,
+                      height: 220,
+                      fit: BoxFit.cover,
+                    ),
+                    Container(
+                      width: double.infinity,
+                      height: 220,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [
+                            Colors.transparent,
+                            Colors.black.withOpacity(0.7),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      top: 12,
+                      left: 12,
+                      child: Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 12,
+                          vertical: 6,
+                        ),
+                        decoration: BoxDecoration(
+                          color: Color(0xFFFF6B6B),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Container(
+                              width: 6,
+                              height: 6,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                shape: BoxShape.circle,
+                              ),
+                            ),
+                            SizedBox(width: 6),
+                            Text(
+                              "On Going",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      top: 12,
+                      right: 12,
+                      child: Container(
+                        padding: EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                          color: Colors.white.withOpacity(0.9),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Icon(
+                          Icons.arrow_outward,
+                          color: Color(0xFF4CAF50),
+                          size: 20,
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      bottom: 12,
+                      left: 12,
+                      right: 12,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Magical Village Tour",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          SizedBox(height: 4),
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.location_on,
+                                color: Colors.white70,
+                                size: 14,
+                              ),
+                              SizedBox(width: 4),
+                              Text(
+                                "Odisha, India",
+                                style: TextStyle(
+                                  color: Colors.white70,
+                                  fontSize: 12,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+
+            SizedBox(height: 24),
+
+            // ═══════════════════════════════════════
+            // TRAVEL BUDDY SECTION
+            // ═══════════════════════════════════════
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(16),
                 child: Container(
                   color: Colors.purple[50],
                   child: Row(
                     children: [
                       Expanded(
                         flex: 1,
-                        child: Image.asset(
-                          'assets/ty2.avif', // Replace with sleeping person image
-                          height: 150,
-                          fit: BoxFit.cover,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(16),
+                            bottomLeft: Radius.circular(16),
+                          ),
+                          child: Image.asset(
+                            'assets/ty2.avif',
+                            height: 140,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
                       Expanded(
                         flex: 2,
                         child: Padding(
-                          padding: const EdgeInsets.all(12.0),
+                          padding: const EdgeInsets.all(14.0),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "Find Your Travel Buddy",
+                                "Find Travel Buddy",
                                 style: TextStyle(
-                                  color: Colors.purple,
-                                  fontSize: 18,
+                                  color: Colors.purple[700],
+                                  fontSize: 16,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
-                              SizedBox(height: 8),
+                              SizedBox(height: 6),
                               Text(
-                                "Connect with like-minded travelers and explore the world together.",
-                                style: TextStyle(fontSize: 14),
+                                "Connect & explore together",
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: Colors.grey[700],
+                                ),
                               ),
                               SizedBox(height: 10),
                               ElevatedButton(
                                 onPressed: () {
-                                   Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => PlanTripScreen(), // Your PlanTrip screen
-      ),
-    );
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => PlanTripScreen(),
+                                    ),
+                                  );
                                 },
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: Colors.orange,
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 16,
+                                    vertical: 8,
+                                  ),
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(8),
                                   ),
                                 ),
-                                child: Text("Click to Match"),
+                                child: Text(
+                                  "Match Now",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 12,
+                                    color: Colors.white,
+                                  ),
+                                ),
                               ),
                             ],
                           ),
@@ -281,48 +536,50 @@ SizedBox(
               ),
             ),
 
-            SizedBox(height: 20),
+            SizedBox(height: 24),
 
-            // Offers Section
+            // ═══════════════════════════════════════
+            // OFFERS SECTION
+            // ═══════════════════════════════════════
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  "Check out these offers",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                  ),
+              child: Text(
+                "Special Offers",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                  color: Colors.black87,
                 ),
               ),
             ),
             SizedBox(height: 12),
 
-            // Offers Horizontal Scroll
             SizedBox(
-              height: 180,
+              height: 160,
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 padding: EdgeInsets.symmetric(horizontal: 16),
                 children: [
-                  offerCard('assets/yu.jpg'),
-                  offerCard('assets/yu2.jpg'),
-                  offerCard('assets/yu3.jpg'),
+                  _offerCard('assets/yu.jpg'),
+                  _offerCard('assets/yu2.jpg'),
+                  _offerCard('assets/yu3.jpg'),
                 ],
               ),
             ),
 
-            SizedBox(height: 20),
+            SizedBox(height: 24),
 
-            // Benefits Section
+            // ═══════════════════════════════════════
+            // BENEFITS GRID
+            // ═══════════════════════════════════════
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Text(
-                "Benefits of Village Stay",
+                "Why Choose Us",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
+                  color: Colors.black87,
                 ),
               ),
             ),
@@ -336,42 +593,54 @@ SizedBox(
                 mainAxisSpacing: 12,
                 physics: NeverScrollableScrollPhysics(),
                 children: [
-                  benefitCard('assets/ty3.jpg', 'Home Stays',
-                      'Experience authentic local living with cozy, affordable stays.'),
-                  benefitCard('assets/ty4.jpg', 'Cab Services',
-                      'Reliable and comfortable rides to your destinations.'),
-                  benefitCard('assets/ty5.jpg', 'Cultural Events',
-                      'Immerse yourself in vibrant traditions and local celebrations.'),
-                  benefitCard('assets/ty6.jpg', 'Travel Guide',
-                      'Personalized assistance to make your journey hassle-free.'),
+                  _benefitCard('assets/ty3.jpg', 'Authentic Stays', 'Local & genuine'),
+                  _benefitCard('assets/ty4.jpg', 'Safe Travel', 'Verified & secure'),
+                  _benefitCard('assets/ty5.jpg', 'Local Culture', 'Immersive experience'),
+                  _benefitCard('assets/ty6.jpg', '24/7 Support', 'Always here for you'),
                 ],
               ),
             ),
 
-            SizedBox(height: 30),
+            SizedBox(height: 32),
 
-            // Hourly Hotels Stays Section
+            // ═══════════════════════════════════════
+            // BOTTOM CTA SECTION
+            // ═══════════════════════════════════════
             Container(
               width: double.infinity,
-              color: Colors.grey[100],
-              padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 16),
+              margin: EdgeInsets.symmetric(horizontal: 16),
+              padding: EdgeInsets.symmetric(vertical: 32, horizontal: 20),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    Color(0xFF4CAF50).withOpacity(0.1),
+                    Color(0xFF45a049).withOpacity(0.05),
+                  ],
+                ),
+                borderRadius: BorderRadius.circular(16),
+                border: Border.all(
+                  color: Color(0xFF4CAF50).withOpacity(0.2),
+                ),
+              ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    "Stay Local & Live Authentic",
+                    "Discover Authentic Villages",
                     style: TextStyle(
-                      fontSize: 34,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.grey[700],
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black87,
                     ),
                     textAlign: TextAlign.center,
                   ),
                   SizedBox(height: 8),
                   Text(
-                    "Your Gateway to Authentic Village Life",
+                    "Experience genuine local life & culture",
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 14,
                       color: Colors.grey[600],
                     ),
                     textAlign: TextAlign.center,
@@ -380,55 +649,153 @@ SizedBox(
               ),
             ),
 
-            SizedBox(height: 30),
+            SizedBox(height: 32),
           ],
         ),
       ),
     );
   }
 
-  // City Card Widget
-  Widget cityCard(String image, String title) {
+  // ═══════════════════════════════════════════════════════════════
+  // HELPER WIDGETS
+  // ═══════════════════════════════════════════════════════════════
+
+  /// Category Chip Widget
+  Widget _categoryChip(String label, bool isSelected) {
     return Container(
-      width: 90,
-      margin: EdgeInsets.only(right: 12),
-      child: Column(
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(12),
-            child: Image.asset(
-              image,
-              width: 80,
-              height: 60,
-              fit: BoxFit.cover,
-            ),
+      margin: EdgeInsets.only(right: 10),
+      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+      decoration: BoxDecoration(
+        color: isSelected ? Color(0xFF4CAF50) : Colors.white,
+        borderRadius: BorderRadius.circular(25),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.08),
+            blurRadius: 8,
+            offset: Offset(0, 2),
           ),
-          SizedBox(height: 5),
-          Text(title, style: TextStyle(fontSize: 14)),
         ],
       ),
-    );
-  }
-
-  // Offer Card Widget
-  Widget offerCard(String image) {
-    return Container(
-      width: 280,
-      margin: EdgeInsets.only(right: 12),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(12),
-        child: Image.asset(
-          image,
-          fit: BoxFit.cover,
+      child: Text(
+        label,
+        style: TextStyle(
+          color: isSelected ? Colors.white : Colors.black87,
+          fontWeight: FontWeight.w600,
+          fontSize: 13,
         ),
       ),
     );
   }
 
-  // Benefit Card Widget
-  Widget benefitCard(String image, String title, String desc) {
+  /// Popular Place Card Widget
+  Widget _placeCard(
+    String image,
+    String title,
+    String location,
+    String route,
+    BuildContext context,
+  ) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => SearchResultsScreen(query: title),
+          ),
+        );
+      },
+      child: Container(
+        width: 160,
+        margin: EdgeInsets.only(right: 12),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(16),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1),
+              blurRadius: 10,
+              offset: Offset(0, 4),
+            ),
+          ],
+        ),
+        child: Stack(
+          fit: StackFit.expand,
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(16),
+              child: Image.asset(
+                image,
+                fit: BoxFit.cover,
+              ),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Colors.transparent,
+                    Colors.black.withOpacity(0.6),
+                  ],
+                ),
+                borderRadius: BorderRadius.circular(16),
+              ),
+            ),
+            Positioned(
+              top: 8,
+              right: 8,
+              child: Container(
+                padding: EdgeInsets.all(6),
+                decoration: BoxDecoration(
+                  color: Colors.white.withOpacity(0.9),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Icon(
+                  Icons.arrow_outward,
+                  color: Color(0xFF4CAF50),
+                  size: 16,
+                ),
+              ),
+            ),
+            Positioned(
+              bottom: 12,
+              left: 12,
+              right: 12,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(height: 2),
+                  Text(
+                    location,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      color: Colors.white70,
+                      fontSize: 11,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  /// Benefit Card Widget
+  Widget _benefitCard(String image, String title, String desc) {
     return ClipRRect(
-      borderRadius: BorderRadius.circular(12),
+      borderRadius: BorderRadius.circular(14),
       child: Stack(
         fit: StackFit.expand,
         children: [
@@ -439,36 +806,66 @@ SizedBox(
           Container(
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [Colors.black54, Colors.transparent],
-                begin: Alignment.bottomCenter,
-                end: Alignment.topCenter,
+                colors: [Colors.black26, Colors.black54],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
               ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(12.0),
             child: Align(
               alignment: Alignment.bottomLeft,
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(title,
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16)),
-                  SizedBox(height: 5),
-                  Text(desc,
-                      style: TextStyle(
-                          color: Colors.white70,
-                          fontSize: 12,
-                          height: 1.3)),
+                  Text(
+                    title,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14,
+                    ),
+                  ),
+                  SizedBox(height: 3),
+                  Text(
+                    desc,
+                    style: TextStyle(
+                      color: Colors.white70,
+                      fontSize: 11,
+                    ),
+                  ),
                 ],
               ),
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  /// Offer Card Widget
+  Widget _offerCard(String image) {
+    return Container(
+      width: 240,
+      margin: EdgeInsets.only(right: 12),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(14),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.1),
+            blurRadius: 8,
+            offset: Offset(0, 2),
+          ),
+        ],
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(14),
+        child: Image.asset(
+          image,
+          fit: BoxFit.cover,
+        ),
       ),
     );
   }
