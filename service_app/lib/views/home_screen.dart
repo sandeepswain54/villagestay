@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:service_app/Chat_Bot/chat_screen.dart';
+import 'package:service_app/GreenDot/nearby.dart';
 import 'package:service_app/Posting_Village/home_village.dart';
 import 'package:service_app/SHOPING/home_shop.dart';
 import 'package:service_app/views/Host_Screens/booking.dart';
 import 'package:service_app/model/Screens_home/acccount_screen.dart';
 import 'package:service_app/OpenStreet/openstreet.dart';
+import 'package:service_app/NearBy/nearby_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -21,17 +23,16 @@ class _HomeScreenState extends State<HomeScreen> {
   final List<String> screenTitles = [
     'Home',
     'Upload',
-    'Chat',
     'Profile',
-    'Path',
+    'Nearby',
+    
   ];
 
   final List<Widget> screens = [
     HomePage(),
-    SellerOnboardingScreen(),
-    Booking(),
-    AccountScreen(),
     Openstreet(),
+     AccountScreen(),
+    TravelExploreScreen()
   ];
 
   @override
@@ -103,9 +104,9 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               _buildNavItem(Icons.home, "Home", 0),
               _buildNavItem(Icons.save_rounded, "Upload", 1),
-              _buildNavItem(Icons.message, "Feed", 2),
-              _buildNavItem(Icons.person, "Profile", 3),
-              _buildNavItem(Icons.map, "Path", 4),
+              _buildNavItem(Icons.location_searching_sharp, "Nearby", 3),
+              _buildNavItem(Icons.person, "Profile", 2),
+              
             ],
           ),
         ),

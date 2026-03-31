@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:service_app/Location/map_page.dart';
 import 'package:service_app/Posting_Village/home_village.dart';
+import 'package:service_app/SHOPING/home_shop.dart';
+import 'package:service_app/UploadPropertyScreen/OrderPage.dart';
 import 'package:service_app/UploadPropertyScreen/Uploadproperty.dart';
 import 'package:service_app/UploadPropertyScreen/hotellistscreen2.dart';
 import 'package:service_app/model/Screens_home/acccount_screen.dart';
@@ -36,8 +38,8 @@ class _HostHomeScreenState extends State<HostHomeScreen> {
   final List<Widget> _screens = [
    const HomePage(),
     UploadPropertyScreen(),
-     HotelListScreen2(),
-    const Post(),
+     SellerOnboardingScreen(),
+    OrderPage(),
     const AccountScreen(),
   ];
 

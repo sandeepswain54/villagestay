@@ -1,0 +1,1982 @@
+[
+  {
+    "district": "Puri",
+    "villages": [
+      {
+        "village_name": "Raghurajpur",
+        "category": "Craft",
+        "short_description": "Heritage crafts village famous for Pattachitra paintings.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Watch Pattachitra artists at work",
+          "Learn traditional painting techniques",
+          "Visit artisan homes and studios",
+          "Participate in art workshops"
+        ],
+        "local_products": [
+          "Pattachitra paintings",
+          "Palm leaf engravings",
+          "Traditional toys and masks",
+          "Wooden handicrafts"
+        ],
+        "revenue_streams": [
+          "Craft tourism and demonstrations",
+          "Direct art sales",
+          "Workshops and training",
+          "Cultural performances"
+        ],
+        "best_time_to_visit": "October - March",
+        "approx_distance_from_district_hq_km": 14
+      },
+      {
+        "village_name": "Mangalajodi",
+        "category": "Eco",
+        "short_description": "Bird sanctuary on Chilika Lake, managed by former poachers.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Bird watching and photography",
+          "Boat tours in Chilika Lake",
+          "Learn about conservation efforts",
+          "Meet former poacher-turned-guides"
+        ],
+        "local_products": [
+          "Fish and aquatic produce",
+          "Handicrafts by community",
+          "Bird-related souvenirs",
+          "Local honey"
+        ],
+        "revenue_streams": [
+          "Eco-tourism and boat services",
+          "Bird watching tours",
+          "Conservation-based income",
+          "Community homestays"
+        ],
+        "best_time_to_visit": "November - February",
+        "approx_distance_from_district_hq_km": 45
+      },
+      {
+        "village_name": "Pipli",
+        "category": "Craft",
+        "short_description": "World-renowned center for colorful Appliqué work.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Watch appliqué artists create designs",
+          "Learn patchwork techniques",
+          "Visit artisan shops and studios",
+          "Purchase colorful appliqué products"
+        ],
+        "local_products": [
+          "Appliqué umbrellas and canopies",
+          "Wall hangings and decorations",
+          "Bags and home furnishings",
+          "Ritual temple items"
+        ],
+        "revenue_streams": [
+          "Appliqué craft sales",
+          "Craft tourism",
+          "Wholesale to retailers",
+          "Festival season orders"
+        ],
+        "best_time_to_visit": "September - March",
+        "approx_distance_from_district_hq_km": 28
+      },
+      {
+        "village_name": "Satapada",
+        "category": "Eco",
+        "short_description": "Gateway to the Irrawaddy dolphin habitat of Chilika.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Dolphin spotting boat rides",
+          "Learn about marine conservation",
+          "Fishing community interaction",
+          "Sunrise boat tours"
+        ],
+        "local_products": [
+          "Fresh fish and seafood",
+          "Fishing nets and equipment",
+          "Local handicrafts",
+          "Dried fish products"
+        ],
+        "revenue_streams": [
+          "Dolphin safari tours",
+          "Fishing and fish trade",
+          "Boat operations",
+          "Eco-tourism activities"
+        ],
+        "best_time_to_visit": "November - January",
+        "approx_distance_from_district_hq_km": 52
+      },
+      {
+        "village_name": "Sakhigopal",
+        "category": "Heritage",
+        "short_description": "Temple village famous for its massive coconut groves.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Temple visit and rituals",
+          "Coconut farm tours",
+          "Learn coconut processing",
+          "Village community interaction"
+        ],
+        "local_products": [
+          "Coconut and coconut oil",
+          "Coconut fiber products",
+          "Temple offerings",
+          "Jaggery from coconut"
+        ],
+        "revenue_streams": [
+          "Coconut farming and processing",
+          "Religious tourism",
+          "Temple donations",
+          "Agro-tourism activities"
+        ],
+        "best_time_to_visit": "October - February",
+        "approx_distance_from_district_hq_km": 35
+      }
+    ]
+  },
+  {
+    "district": "Khordha",
+    "villages": [
+      {
+        "village_name": "Atri",
+        "category": "Eco",
+        "short_description": "Home to therapeutic sulfur hot springs.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Bathe in natural sulfur springs",
+          "Learn about therapeutic benefits",
+          "Nature walks around the area",
+          "Visit nearby waterfalls"
+        ],
+        "local_products": [
+          "Sulfur spring water products",
+          "Herbal medicines",
+          "Natural soaps",
+          "Mineral-rich bathing products"
+        ],
+        "revenue_streams": [
+          "Hot spring tourism",
+          "Health and wellness services",
+          "Herbal product sales",
+          "Accommodation facilities"
+        ],
+        "best_time_to_visit": "October - February",
+        "approx_distance_from_district_hq_km": 35
+      },
+      {
+        "village_name": "Sadeibereni",
+        "category": "Craft",
+        "short_description": "Tribal metal craft village famous for Dhokra casting.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Watch Dhokra lost-wax casting process",
+          "Learn metalwork techniques",
+          "Visit artisan workshops",
+          "Meet tribal craftspeople"
+        ],
+        "local_products": [
+          "Dhokra metal figurines",
+          "Tribal jewelry",
+          "Decorative metal items",
+          "Religious metal artifacts"
+        ],
+        "revenue_streams": [
+          "Dhokra craft sales",
+          "Craft demonstrations and tourism",
+          "Wholesale to retailers",
+          "Direct consumer sales"
+        ],
+        "best_time_to_visit": "September - March",
+        "approx_distance_from_district_hq_km": 20
+      },
+      {
+        "village_name": "Dhauli",
+        "category": "Heritage",
+        "short_description": "Historical village at the foot of Shanti Stupa.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Visit Shanti Stupa",
+          "Learn Mauryan history",
+          "Rock-cut edicts viewing",
+          "Meditation and peace activities"
+        ],
+        "local_products": [
+          "Religious souvenirs",
+          "Local handicrafts",
+          "Spiritual items",
+          "Historical artifacts replicas"
+        ],
+        "revenue_streams": [
+          "Religious and heritage tourism",
+          "Souvenir sales",
+          "Meditation retreats",
+          "Educational tours"
+        ],
+        "best_time_to_visit": "October - February",
+        "approx_distance_from_district_hq_km": 8
+      },
+      {
+        "village_name": "Banapur",
+        "category": "Heritage",
+        "short_description": "Known for the ancient Bhagabati Temple and bell metal work.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Temple visit and rituals",
+          "Watch bell metal craftsmen",
+          "Learn metalwork techniques",
+          "Participate in festivals"
+        ],
+        "local_products": [
+          "Bell metal items and utensils",
+          "Temple offerings",
+          "Decorative metalware",
+          "Religious artifacts"
+        ],
+        "revenue_streams": [
+          "Bell metal craft sales",
+          "Religious tourism",
+          "Temple donations",
+          "Craft demonstrations"
+        ],
+        "best_time_to_visit": "October - February",
+        "approx_distance_from_district_hq_km": 28
+      },
+      {
+        "village_name": "Tangi",
+        "category": "Eco",
+        "short_description": "Riverside agriculture hub near the edge of Chilika.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Help with agriculture and farming",
+          "Learn riverside farming methods",
+          "Visit Chilika Lake edge",
+          "Bird watching opportunities"
+        ],
+        "local_products": [
+          "Rice and agricultural products",
+          "Fish from Chilika",
+          "Seasonal vegetables",
+          "Dairy products"
+        ],
+        "revenue_streams": [
+          "Agriculture and farming",
+          "Fish farming in ponds",
+          "Agro-tourism",
+          "Livestock rearing"
+        ],
+        "best_time_to_visit": "October - February",
+        "approx_distance_from_district_hq_km": 42
+      }
+    ]
+  },
+  {
+    "district": "Ganjam",
+    "villages": [
+      {
+        "village_name": "Gopalpur",
+        "category": "Eco",
+        "short_description": "Historic seaside village known for its lighthouse.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Visit historic lighthouse",
+          "Beach walks and sunrise views",
+          "Fishing community interaction",
+          "Marine conservation activities"
+        ],
+        "local_products": [
+          "Fresh seafood",
+          "Dried fish products",
+          "Coastal handicrafts",
+          "Sea salt"
+        ],
+        "revenue_streams": [
+          "Coastal tourism",
+          "Fishing and fish trade",
+          "Lighthouse tours",
+          "Beach resort operations"
+        ],
+        "best_time_to_visit": "October - February",
+        "approx_distance_from_district_hq_km": 48
+      },
+      {
+        "village_name": "Tara Tarini",
+        "category": "Heritage",
+        "short_description": "Hilltop village famous for its Shakti shrine.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Temple pilgrimage and rituals",
+          "Hilltop scenic views",
+          "Religious ceremonies",
+          "Learn about Shakti worship"
+        ],
+        "local_products": [
+          "Temple offerings",
+          "Religious souvenirs",
+          "Local handicrafts",
+          "Herbal products"
+        ],
+        "revenue_streams": [
+          "Religious tourism",
+          "Temple donations",
+          "Souvenir sales",
+          "Pilgrimage services"
+        ],
+        "best_time_to_visit": "October - January",
+        "approx_distance_from_district_hq_km": 55
+      },
+      {
+        "village_name": "Pati Sonepur",
+        "category": "Eco",
+        "short_description": "Serene beach village at the confluence of Bahuda river.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Beach relaxation and meditation",
+          "River and sea confluence viewing",
+          "Fishing community tours",
+          "Sunrise and sunset walks"
+        ],
+        "local_products": [
+          "Fresh fish and seafood",
+          "Dried fish",
+          "Coastal vegetables",
+          "Salt products"
+        ],
+        "revenue_streams": [
+          "Beach tourism",
+          "Fishing and aquaculture",
+          "Coastal homestays",
+          "Adventure activities"
+        ],
+        "best_time_to_visit": "October - February",
+        "approx_distance_from_district_hq_km": 38
+      },
+      {
+        "village_name": "Bomokei",
+        "category": "Craft",
+        "short_description": "Famous for the traditional Bomkai handloom sarees.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Watch Bomkai saree weaving",
+          "Learn ikat and weaving techniques",
+          "Visit weaver homes",
+          "Purchase authentic sarees"
+        ],
+        "local_products": [
+          "Bomkai sarees",
+          "Handwoven textiles",
+          "Silk and cotton fabrics",
+          "Traditional dress materials"
+        ],
+        "revenue_streams": [
+          "Handloom textile sales",
+          "Craft demonstrations",
+          "Wholesale to retailers",
+          "Direct consumer sales"
+        ],
+        "best_time_to_visit": "September - March",
+        "approx_distance_from_district_hq_km": 32
+      },
+      {
+        "village_name": "Belaguntha",
+        "category": "Craft",
+        "short_description": "Famous for traditional brass flexible fish crafts.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Watch brass fish craft making",
+          "Learn metalwork and bending techniques",
+          "Visit artisan workshops",
+          "Try pottery wheel"
+        ],
+        "local_products": [
+          "Brass flexible fish crafts",
+          "Metal decorative items",
+          "Pottery and terracotta",
+          "Tribal handicrafts"
+        ],
+        "revenue_streams": [
+          "Brass craft sales",
+          "Pottery production",
+          "Craft tourism",
+          "Direct consumer sales"
+        ],
+        "best_time_to_visit": "September - March",
+        "approx_distance_from_district_hq_km": 25
+      }
+    ]
+  },
+  {
+    "district": "Mayurbhanj",
+    "villages": [
+      {
+        "village_name": "Barehipani",
+        "category": "Eco",
+        "short_description": "Village near the massive waterfall in Similipal.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Waterfall trekking",
+          "Forest nature walks",
+          "Swimming in pools",
+          "Camping and wildlife viewing"
+        ],
+        "local_products": [
+          "Forest honey",
+          "Medicinal plants",
+          "Forest fruits",
+          "Tribal handicrafts"
+        ],
+        "revenue_streams": [
+          "Eco-tourism and guides",
+          "Waterfall tourism",
+          "Forest product collection",
+          "Adventure activities"
+        ],
+        "best_time_to_visit": "October - February",
+        "approx_distance_from_district_hq_km": 50
+      },
+      {
+        "village_name": "Khiching",
+        "category": "Heritage",
+        "short_description": "Ancient village known for its black stone Kichakeswari temple.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Temple visit and rituals",
+          "Learn about ancient architecture",
+          "Attend religious festivals",
+          "Participate in ceremonies"
+        ],
+        "local_products": [
+          "Religious souvenirs",
+          "Temple offerings",
+          "Local handicrafts",
+          "Herbal products"
+        ],
+        "revenue_streams": [
+          "Religious tourism",
+          "Temple donations",
+          "Souvenir sales",
+          "Pilgrimage services"
+        ],
+        "best_time_to_visit": "October - February",
+        "approx_distance_from_district_hq_km": 35
+      },
+      {
+        "village_name": "Jashipur",
+        "category": "Eco",
+        "short_description": "Gateway to Similipal Tiger Reserve.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Jungle safaris and trekking",
+          "Wildlife watching",
+          "Forest conservation learning",
+          "Tribal community interaction"
+        ],
+        "local_products": [
+          "Forest honey",
+          "Medicinal herbs",
+          "Tribal crafts",
+          "Forest products"
+        ],
+        "revenue_streams": [
+          "Wildlife tourism",
+          "Jungle guides and safaris",
+          "Eco-lodge operations",
+          "Forest product sales"
+        ],
+        "best_time_to_visit": "October - February",
+        "approx_distance_from_district_hq_km": 55
+      },
+      {
+        "village_name": "Lulung",
+        "category": "Eco",
+        "short_description": "Picturesque village on the banks of Palpala River.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "River boat rides",
+          "Fishing activities",
+          "Nature walks along riverbanks",
+          "Village community interaction"
+        ],
+        "local_products": [
+          "Fresh fish and aquatic products",
+          "River vegetables",
+          "Fishing nets and equipment",
+          "Local honey"
+        ],
+        "revenue_streams": [
+          "Fishing and aquaculture",
+          "River tourism",
+          "Eco-tourism activities",
+          "Agricultural products"
+        ],
+        "best_time_to_visit": "October - February",
+        "approx_distance_from_district_hq_km": 42
+      },
+      {
+        "village_name": "Bangriposi",
+        "category": "Eco",
+        "short_description": "Scenic hill village known for tribal culture and ghats.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Hill village trekking",
+          "Tribal culture learning",
+          "Visit sacred ghats",
+          "Traditional ceremony participation"
+        ],
+        "local_products": [
+          "Tribal handicrafts",
+          "Forest honey",
+          "Medicinal plants",
+          "Local textiles"
+        ],
+        "revenue_streams": [
+          "Tribal culture tourism",
+          "Eco-tourism and guides",
+          "Handicraft sales",
+          "Homestay operations"
+        ],
+        "best_time_to_visit": "October - February",
+        "approx_distance_from_district_hq_km": 48
+      }
+    ]
+  },
+  {
+    "district": "Sambalpur",
+    "villages": [
+      {
+        "village_name": "Huma",
+        "category": "Heritage",
+        "short_description": "Home to the famous Leaning Temple of Lord Shiva.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Temple visit and architectural study",
+          "Learn about temple engineering",
+          "Attend religious rituals",
+          "Photography opportunities"
+        ],
+        "local_products": [
+          "Religious souvenirs",
+          "Temple offerings",
+          "Local handicrafts",
+          "Traditional sweets"
+        ],
+        "revenue_streams": [
+          "Religious tourism",
+          "Temple donations",
+          "Souvenir sales",
+          "Photography tours"
+        ],
+        "best_time_to_visit": "October - February",
+        "approx_distance_from_district_hq_km": 28
+      },
+      {
+        "village_name": "Hirakud",
+        "category": "Eco",
+        "short_description": "Village overlooking the world's longest earthen dam.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Dam viewing and tours",
+          "Lake boat rides",
+          "Bird watching around reservoir",
+          "Learn about water management"
+        ],
+        "local_products": [
+          "Fresh fish from reservoir",
+          "Agricultural produce",
+          "Handicrafts",
+          "Local dairy products"
+        ],
+        "revenue_streams": [
+          "Dam and lake tourism",
+          "Boat operations",
+          "Fish farming",
+          "Agricultural products"
+        ],
+        "best_time_to_visit": "October - February",
+        "approx_distance_from_district_hq_km": 22
+      },
+      {
+        "village_name": "Chipilima",
+        "category": "Eco",
+        "short_description": "Hydroelectric hub with scenic river views and a waterfall.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Waterfall trekking",
+          "River water activities",
+          "Scenic photography",
+          "Forest walks"
+        ],
+        "local_products": [
+          "Forest honey",
+          "Medicinal plants",
+          "Local vegetables",
+          "Tribal crafts"
+        ],
+        "revenue_streams": [
+          "Eco-tourism and guides",
+          "Waterfall tourism",
+          "Adventure activities",
+          "Forest product collection"
+        ],
+        "best_time_to_visit": "October - February",
+        "approx_distance_from_district_hq_km": 35
+      },
+      {
+        "village_name": "Ghess",
+        "category": "Heritage",
+        "short_description": "Historical village linked to the freedom struggle.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Learn freedom struggle history",
+          "Visit historical sites",
+          "Museum and memorial visits",
+          "Cultural performances"
+        ],
+        "local_products": [
+          "Historical souvenirs",
+          "Local handicrafts",
+          "Traditional textiles",
+          "Food specialties"
+        ],
+        "revenue_streams": [
+          "Heritage tourism",
+          "Educational tours",
+          "Souvenir sales",
+          "Cultural events"
+        ],
+        "best_time_to_visit": "October - February",
+        "approx_distance_from_district_hq_km": 42
+      },
+      {
+        "village_name": "Kud Gunda",
+        "category": "Eco",
+        "short_description": "Known for the serene picnic spots along the river Mahanadi.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Riverside picnics",
+          "Swimming and water activities",
+          "Fishing experiences",
+          "Nature walks"
+        ],
+        "local_products": [
+          "Fresh fish",
+          "Agricultural produce",
+          "Honey from local beekeepers",
+          "Handicrafts"
+        ],
+        "revenue_streams": [
+          "Picnic tourism",
+          "River activities",
+          "Fishing and aquaculture",
+          "Agricultural products"
+        ],
+        "best_time_to_visit": "October - February",
+        "approx_distance_from_district_hq_km": 38
+      }
+    ]
+  },
+  {
+    "district": "Dhenkanal",
+    "villages": [
+      {
+        "village_name": "Sadeibareni",
+        "category": "Craft",
+        "short_description": "Tribal metal craft village renowned for Dokra lost-wax casting.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Watch Dokra casting process",
+          "Learn metal craft techniques",
+          "Visit artisan workshops",
+          "Meet tribal craftspeople"
+        ],
+        "local_products": [
+          "Dokra figurines and jewelry",
+          "Metal decorative items",
+          "Tribal art pieces",
+          "Religious metal artifacts"
+        ],
+        "revenue_streams": [
+          "Dokra craft sales",
+          "Craft demonstrations",
+          "Wholesale to retailers",
+          "Direct consumer sales"
+        ],
+        "best_time_to_visit": "September - March",
+        "approx_distance_from_district_hq_km": 20
+      },
+      {
+        "village_name": "Gonasika",
+        "category": "Heritage",
+        "short_description": "Ancient village with historical temples and ruins.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Explore ancient temple ruins",
+          "Learn architectural history",
+          "Attend religious ceremonies",
+          "Photography of historical sites"
+        ],
+        "local_products": [
+          "Religious souvenirs",
+          "Historical replicas",
+          "Local handicrafts",
+          "Traditional items"
+        ],
+        "revenue_streams": [
+          "Heritage tourism",
+          "Religious tourism",
+          "Educational tours",
+          "Souvenir sales"
+        ],
+        "best_time_to_visit": "October - February",
+        "approx_distance_from_district_hq_km": 45
+      },
+      {
+        "village_name": "Talcher",
+        "category": "Heritage",
+        "short_description": "Coal mining village with industrial heritage and nearby forests.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Learn about mining heritage",
+          "Visit forest areas",
+          "Meet local communities",
+          "Industrial site tours"
+        ],
+        "local_products": [
+          "Forest products",
+          "Agricultural produce",
+          "Handicrafts",
+          "Local honey"
+        ],
+        "revenue_streams": [
+          "Industrial heritage tourism",
+          "Forest product collection",
+          "Eco-tourism",
+          "Community-based tourism"
+        ],
+        "best_time_to_visit": "October - February",
+        "approx_distance_from_district_hq_km": 35
+      },
+      {
+        "village_name": "Onda",
+        "category": "Craft",
+        "short_description": "Pottery village known for traditional ceramics and earthenware.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Try pottery wheel",
+          "Learn clay preparation",
+          "Watch kiln firing",
+          "Participate in workshops"
+        ],
+        "local_products": [
+          "Handmade pottery and earthenware",
+          "Terracotta items",
+          "Decorative ceramics",
+          "Ritual pottery"
+        ],
+        "revenue_streams": [
+          "Pottery sales",
+          "Craft demonstrations",
+          "Tourist workshops",
+          "Direct consumer sales"
+        ],
+        "best_time_to_visit": "September - March",
+        "approx_distance_from_district_hq_km": 28
+      },
+      {
+        "village_name": "Hindol",
+        "category": "Eco",
+        "short_description": "Village known for its natural springs and forest areas.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Visit natural springs",
+          "Forest trekking",
+          "Nature photography",
+          "Wellness activities"
+        ],
+        "local_products": [
+          "Spring water products",
+          "Forest honey",
+          "Medicinal plants",
+          "Local handicrafts"
+        ],
+        "revenue_streams": [
+          "Wellness tourism",
+          "Forest product collection",
+          "Eco-tourism",
+          "Handicraft sales"
+        ],
+        "best_time_to_visit": "October - February",
+        "approx_distance_from_district_hq_km": 32
+      }
+    ]
+  },
+  {
+    "district": "Sundargarh",
+    "villages": [
+      {
+        "village_name": "Bonai",
+        "category": "Eco",
+        "short_description": "Hill station village with iron ore mining heritage and eco-tourism.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Hill trekking and nature walks",
+          "Learn about mining heritage",
+          "Visit eco-resorts",
+          "Wildlife and forest viewing"
+        ],
+        "local_products": [
+          "Forest honey",
+          "Medicinal plants",
+          "Local vegetables",
+          "Tribal handicrafts"
+        ],
+        "revenue_streams": [
+          "Eco-tourism and eco-resorts",
+          "Forest product collection",
+          "Adventure tourism",
+          "Community-based tourism"
+        ],
+        "best_time_to_visit": "October - February",
+        "approx_distance_from_district_hq_km": 55
+      },
+      {
+        "village_name": "Tensa",
+        "category": "Eco",
+        "short_description": "Community-managed eco-resort village with tribal lifestyle.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Stay in eco-resort",
+          "Participate in tribal activities",
+          "Learn traditional practices",
+          "Forest exploration"
+        ],
+        "local_products": [
+          "Tribal handicrafts",
+          "Forest products",
+          "Herbal medicines",
+          "Local food specialties"
+        ],
+        "revenue_streams": [
+          "Community eco-resort operations",
+          "Tribal culture tourism",
+          "Forest product sales",
+          "Handicraft sales"
+        ],
+        "best_time_to_visit": "October - February",
+        "approx_distance_from_district_hq_km": 62
+      },
+      {
+        "village_name": "Rourkela",
+        "category": "Heritage",
+        "short_description": "Industrial city village with modern heritage and nearby tribal areas.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Visit industrial heritage sites",
+          "Learn about manufacturing",
+          "Explore nearby tribal villages",
+          "Cultural programs"
+        ],
+        "local_products": [
+          "Steel products",
+          "Tribal handicrafts",
+          "Local food items",
+          "Souvenirs"
+        ],
+        "revenue_streams": [
+          "Industrial heritage tourism",
+          "Manufacturing facility tours",
+          "Souvenir sales",
+          "Cultural events"
+        ],
+        "best_time_to_visit": "October - February",
+        "approx_distance_from_district_hq_km": 5
+      },
+      {
+        "village_name": "Kuanripal",
+        "category": "Tribal",
+        "short_description": "Tribal settlement with traditional hunting and forest farming.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Learn tribal hunting traditions",
+          "Forest foraging activities",
+          "Traditional food preparation",
+          "Tribal ceremony observation"
+        ],
+        "local_products": [
+          "Forest game meat",
+          "Wild honey and beeswax",
+          "Medicinal plants",
+          "Tribal handicrafts"
+        ],
+        "revenue_streams": [
+          "Traditional hunting and gathering",
+          "Forest product sales",
+          "Tribal culture tourism",
+          "Handicraft sales"
+        ],
+        "best_time_to_visit": "November - February",
+        "approx_distance_from_district_hq_km": 48
+      },
+      {
+        "village_name": "Jamshedpur",
+        "category": "Heritage",
+        "short_description": "Steel city village with planned urban layout and cultural heritage.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Visit planned city architecture",
+          "Industrial facility tours",
+          "Museum visits",
+          "Cultural performances"
+        ],
+        "local_products": [
+          "Steel products",
+          "Local handicrafts",
+          "Regional food items",
+          "Cultural souvenirs"
+        ],
+        "revenue_streams": [
+          "Industrial heritage tourism",
+          "City tours and guides",
+          "Museum operations",
+          "Souvenir sales"
+        ],
+        "best_time_to_visit": "October - February",
+        "approx_distance_from_district_hq_km": 35
+      }
+    ]
+  },
+  {
+    "district": "Kendrapara",
+    "villages": [
+      {
+        "village_name": "Bhitarkanika",
+        "category": "Eco",
+        "short_description": "Coastal sanctuary with mangrove forests and crocodile habitat.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Mangrove forest boat tours",
+          "Crocodile and bird watching",
+          "Learn about wetland conservation",
+          "Eco-lodge stays"
+        ],
+        "local_products": [
+          "Fish and seafood",
+          "Mangrove honey",
+          "Coastal handicrafts",
+          "Sea vegetables"
+        ],
+        "revenue_streams": [
+          "Eco-tourism and sanctuary fees",
+          "Boat operations and guides",
+          "Eco-lodge operations",
+          "Fish and wildlife products"
+        ],
+        "best_time_to_visit": "October - February",
+        "approx_distance_from_district_hq_km": 45
+      },
+      {
+        "village_name": "Rajnagar",
+        "category": "Heritage",
+        "short_description": "Ancient temple village with historical ruins and pilgrimage sites.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Temple visit and rituals",
+          "Explore historical ruins",
+          "Religious pilgrimage",
+          "Learn about ancient history"
+        ],
+        "local_products": [
+          "Religious souvenirs",
+          "Temple offerings",
+          "Local handicrafts",
+          "Traditional food items"
+        ],
+        "revenue_streams": [
+          "Religious tourism",
+          "Temple donations",
+          "Pilgrimage services",
+          "Souvenir sales"
+        ],
+        "best_time_to_visit": "October - January",
+        "approx_distance_from_district_hq_km": 38
+      },
+      {
+        "village_name": "Talchua",
+        "category": "Eco",
+        "short_description": "Village at the entrance of Bhitarkanika with mangrove ecosystem.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Mangrove exploration",
+          "Bird and wildlife watching",
+          "Fishing community tours",
+          "Conservation activities"
+        ],
+        "local_products": [
+          "Fish and seafood",
+          "Mangrove products",
+          "Coastal crafts",
+          "Honey"
+        ],
+        "revenue_streams": [
+          "Fishing and aquaculture",
+          "Eco-tourism",
+          "Conservation-based income",
+          "Community homestays"
+        ],
+        "best_time_to_visit": "October - February",
+        "approx_distance_from_district_hq_km": 42
+      },
+      {
+        "village_name": "Mahakalpada",
+        "category": "Heritage",
+        "short_description": "Historical village with ancient Shakti shrine and cultural heritage.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Shrine visit and rituals",
+          "Religious festivals",
+          "Learn about local culture",
+          "Participate in ceremonies"
+        ],
+        "local_products": [
+          "Religious souvenirs",
+          "Local handicrafts",
+          "Food items",
+          "Traditional products"
+        ],
+        "revenue_streams": [
+          "Religious tourism",
+          "Temple donations",
+          "Cultural events",
+          "Souvenir sales"
+        ],
+        "best_time_to_visit": "October - February",
+        "approx_distance_from_district_hq_km": 35
+      },
+      {
+        "village_name": "Mahakalapada",
+        "category": "Eco",
+        "short_description": "Coastal fishing village with pristine beaches and turtle nesting.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Beach walks and meditation",
+          "Fishing boat tours",
+          "Turtle nesting observation",
+          "Marine conservation participation"
+        ],
+        "local_products": [
+          "Fresh fish and seafood",
+          "Dried fish products",
+          "Coastal handicrafts",
+          "Salt"
+        ],
+        "revenue_streams": [
+          "Fishing and aquaculture",
+          "Beach tourism",
+          "Turtle conservation programs",
+          "Eco-tourism"
+        ],
+        "best_time_to_visit": "October - February",
+        "approx_distance_from_district_hq_km": 48
+      }
+    ]
+  },
+  {
+    "district": "Jagatsinghpur",
+    "villages": [
+      {
+        "village_name": "Ersama",
+        "category": "Heritage",
+        "short_description": "Ancient village known for its Brahmapur temple and bell metal crafts.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Temple visit and rituals",
+          "Watch bell metal crafting",
+          "Learn metalwork techniques",
+          "Purchase authentic crafts"
+        ],
+        "local_products": [
+          "Bell metal items",
+          "Religious artifacts",
+          "Temple offerings",
+          "Decorative metalware"
+        ],
+        "revenue_streams": [
+          "Bell metal craft sales",
+          "Religious tourism",
+          "Craft demonstrations",
+          "Temple donations"
+        ],
+        "best_time_to_visit": "October - February",
+        "approx_distance_from_district_hq_km": 35
+      },
+      {
+        "village_name": "Paradeep",
+        "category": "Eco",
+        "short_description": "Coastal village with port heritage and fishing community.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Port and harbor tours",
+          "Fishing boat operations",
+          "Beach walks",
+          "Marine ecosystem learning"
+        ],
+        "local_products": [
+          "Fresh fish and seafood",
+          "Fish products",
+          "Coastal handicrafts",
+          "Sea products"
+        ],
+        "revenue_streams": [
+          "Fishing and aquaculture",
+          "Port tourism",
+          "Boat operations",
+          "Marine product sales"
+        ],
+        "best_time_to_visit": "October - February",
+        "approx_distance_from_district_hq_km": 18
+      },
+      {
+        "village_name": "Pataspur",
+        "category": "Heritage",
+        "short_description": "Historic village known for its ancient temples and cultural sites.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Temple exploration and visits",
+          "Learn local history",
+          "Attend religious festivals",
+          "Photography of historical sites"
+        ],
+        "local_products": [
+          "Religious souvenirs",
+          "Local handicrafts",
+          "Food specialties",
+          "Traditional items"
+        ],
+        "revenue_streams": [
+          "Religious tourism",
+          "Heritage tours",
+          "Souvenir sales",
+          "Cultural events"
+        ],
+        "best_time_to_visit": "October - February",
+        "approx_distance_from_district_hq_km": 28
+      },
+      {
+        "village_name": "Aul",
+        "category": "Eco",
+        "short_description": "Coastal village known for its scenic beaches and fishing heritage.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Beach relaxation and walks",
+          "Fishing community interaction",
+          "Sunrise and sunset views",
+          "Marine conservation activities"
+        ],
+        "local_products": [
+          "Fresh fish and seafood",
+          "Dried fish",
+          "Coastal crafts",
+          "Salt products"
+        ],
+        "revenue_streams": [
+          "Beach tourism",
+          "Fishing operations",
+          "Coastal homestays",
+          "Adventure activities"
+        ],
+        "best_time_to_visit": "October - February",
+        "approx_distance_from_district_hq_km": 42
+      },
+      {
+        "village_name": "Raghunathpur",
+        "category": "Heritage",
+        "short_description": "Village with agricultural heritage and traditional farming.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Participate in farming activities",
+          "Learn traditional agriculture",
+          "Visit farm communities",
+          "Taste rural food"
+        ],
+        "local_products": [
+          "Rice and agricultural produce",
+          "Vegetables and pulses",
+          "Dairy products",
+          "Oil and seeds"
+        ],
+        "revenue_streams": [
+          "Agriculture and farming",
+          "Agro-tourism",
+          "Livestock rearing",
+          "Agricultural produce sales"
+        ],
+        "best_time_to_visit": "October - February",
+        "approx_distance_from_district_hq_km": 32
+      }
+    ]
+  },
+  {
+    "district": "Baleswar",
+    "villages": [
+      {
+        "village_name": "Nilagiri",
+        "category": "Eco",
+        "short_description": "Hill village with waterfalls and dense forest ecosystem.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Waterfall trekking",
+          "Forest nature walks",
+          "Wildlife viewing",
+          "Camping and adventure"
+        ],
+        "local_products": [
+          "Forest honey",
+          "Medicinal plants",
+          "Forest fruits and nuts",
+          "Tribal handicrafts"
+        ],
+        "revenue_streams": [
+          "Eco-tourism and guides",
+          "Waterfall tourism",
+          "Forest product sales",
+          "Adventure activities"
+        ],
+        "best_time_to_visit": "October - February",
+        "approx_distance_from_district_hq_km": 52
+      },
+      {
+        "village_name": "Baleshwar",
+        "category": "Heritage",
+        "short_description": "Historic town village with ancient temples and cultural heritage.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Temple tours and visits",
+          "Learn local history",
+          "Attend religious festivals",
+          "Cultural programs"
+        ],
+        "local_products": [
+          "Religious souvenirs",
+          "Local handicrafts",
+          "Food specialties",
+          "Traditional items"
+        ],
+        "revenue_streams": [
+          "Religious tourism",
+          "Heritage tours",
+          "Cultural events",
+          "Souvenir sales"
+        ],
+        "best_time_to_visit": "October - February",
+        "approx_distance_from_district_hq_km": 5
+      },
+      {
+        "village_name": "Remuna",
+        "category": "Heritage",
+        "short_description": "Sacred shrine village with pilgrimage and cultural significance.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Shrine visit and rituals",
+          "Religious pilgrimage",
+          "Attend festivals",
+          "Learn spiritual practices"
+        ],
+        "local_products": [
+          "Temple offerings",
+          "Religious items",
+          "Local food",
+          "Souvenirs"
+        ],
+        "revenue_streams": [
+          "Religious tourism",
+          "Temple donations",
+          "Pilgrimage services",
+          "Souvenir sales"
+        ],
+        "best_time_to_visit": "October - January",
+        "approx_distance_from_district_hq_km": 45
+      },
+      {
+        "village_name": "Soro",
+        "category": "Heritage",
+        "short_description": "Agricultural village known for silk production heritage.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Silk production tours",
+          "Learn sericulture",
+          "Watch weaving",
+          "Farm and textile visits"
+        ],
+        "local_products": [
+          "Silk and silk products",
+          "Agricultural produce",
+          "Handwoven items",
+          "Textile products"
+        ],
+        "revenue_streams": [
+          "Sericulture and silk farming",
+          "Handloom production",
+          "Craft tourism",
+          "Direct sales"
+        ],
+        "best_time_to_visit": "September - March",
+        "approx_distance_from_district_hq_km": 38
+      },
+      {
+        "village_name": "Anugul",
+        "category": "Eco",
+        "short_description": "Forest village with wildlife sanctuary and tribal culture.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Wildlife sanctuary tours",
+          "Tribal culture learning",
+          "Forest exploration",
+          "Bird watching"
+        ],
+        "local_products": [
+          "Forest honey",
+          "Tribal handicrafts",
+          "Medicinal plants",
+          "Forest fruits"
+        ],
+        "revenue_streams": [
+          "Eco-tourism",
+          "Tribal culture tourism",
+          "Forest product sales",
+          "Handicraft sales"
+        ],
+        "best_time_to_visit": "October - February",
+        "approx_distance_from_district_hq_km": 48
+      }
+    ]
+  },
+  {
+    "district": "Koraput",
+    "villages": [
+      {
+        "village_name": "Kotpad",
+        "category": "Craft",
+        "short_description": "Famous for natural-dyed Kotpad handloom textiles.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Watch handloom weaving",
+          "Learn natural dyeing process",
+          "Visit weaver families",
+          "Purchase authentic textiles"
+        ],
+        "local_products": [
+          "Kotpad handloom sarees",
+          "Naturally dyed fabrics",
+          "Handwoven textiles",
+          "Traditional dress materials"
+        ],
+        "revenue_streams": [
+          "Handloom textile sales",
+          "Craft demonstrations",
+          "Wholesale supply",
+          "Direct consumer sales"
+        ],
+        "best_time_to_visit": "September - March",
+        "approx_distance_from_district_hq_km": 42
+      },
+      {
+        "village_name": "Lamptaput",
+        "category": "Tribal",
+        "short_description": "Tribal village of Gadaba and Paroja communities with pottery heritage.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Watch tribal pottery making",
+          "Learn traditional crafts",
+          "Meet Gadaba and Paroja people",
+          "Participate in tribal activities"
+        ],
+        "local_products": [
+          "Terracotta pots",
+          "Tribal jewelry",
+          "Handmade pottery",
+          "Tribal handicrafts"
+        ],
+        "revenue_streams": [
+          "Pottery sales",
+          "Craft demonstrations",
+          "Tribal culture tourism",
+          "Handicraft sales"
+        ],
+        "best_time_to_visit": "October - February",
+        "approx_distance_from_district_hq_km": 55
+      },
+      {
+        "village_name": "Deomali",
+        "category": "Eco",
+        "short_description": "Village near Odisha's highest peak with tribal settlements.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Mountain peak trekking",
+          "Panoramic view photography",
+          "Tribal village tours",
+          "Nature walks"
+        ],
+        "local_products": [
+          "Forest honey",
+          "Tribal handicrafts",
+          "Medicinal plants",
+          "Local vegetables"
+        ],
+        "revenue_streams": [
+          "Trekking and adventure tourism",
+          "Eco-lodge operations",
+          "Tribal culture tourism",
+          "Forest product sales"
+        ],
+        "best_time_to_visit": "October - February",
+        "approx_distance_from_district_hq_km": 65
+      },
+      {
+        "village_name": "Harishankar",
+        "category": "Heritage",
+        "short_description": "Sacred shrine village with ancient temples and pilgrimage site.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Temple pilgrimage",
+          "Religious rituals",
+          "Waterfall viewing",
+          "Learn spiritual significance"
+        ],
+        "local_products": [
+          "Religious souvenirs",
+          "Temple offerings",
+          "Local handicrafts",
+          "Food items"
+        ],
+        "revenue_streams": [
+          "Religious tourism",
+          "Temple donations",
+          "Pilgrimage services",
+          "Souvenir sales"
+        ],
+        "best_time_to_visit": "October - January",
+        "approx_distance_from_district_hq_km": 48
+      },
+      {
+        "village_name": "Sunabeda",
+        "category": "Eco",
+        "short_description": "Hill village with forest sanctuary and scenic views.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Forest trekking",
+          "Wildlife observation",
+          "Bird watching",
+          "Nature photography"
+        ],
+        "local_products": [
+          "Forest honey",
+          "Medicinal plants",
+          "Forest fruits",
+          "Tribal crafts"
+        ],
+        "revenue_streams": [
+          "Eco-tourism and guides",
+          "Wildlife tourism",
+          "Forest product sales",
+          "Eco-lodge operations"
+        ],
+        "best_time_to_visit": "October - February",
+        "approx_distance_from_district_hq_km": 52
+      }
+    ]
+  },
+  {
+    "district": "Rayagada",
+    "villages": [
+      {
+        "village_name": "Muniguda",
+        "category": "Tribal",
+        "short_description": "Gateway village for Dongria Kondh tribe and Niyamgiri hills.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Mountain trekking",
+          "Meet Dongria Kondh people",
+          "Learn tribal traditions",
+          "Visit tribal villages"
+        ],
+        "local_products": [
+          "Tribal handicrafts",
+          "Mountain vegetables",
+          "Forest honey",
+          "Traditional textiles"
+        ],
+        "revenue_streams": [
+          "Tribal culture tourism",
+          "Mountain trekking guides",
+          "Handicraft sales",
+          "Homestay operations"
+        ],
+        "best_time_to_visit": "November - February",
+        "approx_distance_from_district_hq_km": 48
+      },
+      {
+        "village_name": "Lanjia",
+        "category": "Tribal",
+        "short_description": "Saura tribal village famous for mural paintings and folk art.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "View Saura mural paintings",
+          "Learn tribal art traditions",
+          "Meet Saura artists",
+          "Participate in workshops"
+        ],
+        "local_products": [
+          "Saura paintings",
+          "Tribal handicrafts",
+          "Folk art items",
+          "Tribal jewelry"
+        ],
+        "revenue_streams": [
+          "Art and craft sales",
+          "Cultural tourism",
+          "Tribal art workshops",
+          "Handicraft sales"
+        ],
+        "best_time_to_visit": "October - February",
+        "approx_distance_from_district_hq_km": 55
+      },
+      {
+        "village_name": "Seranga",
+        "category": "Tribal",
+        "short_description": "Saura village known for traditional ikonographic wall paintings.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Observe mural painting techniques",
+          "Learn tribal culture",
+          "Visit painted houses",
+          "Photography opportunities"
+        ],
+        "local_products": [
+          "Saura wall paintings",
+          "Tribal art pieces",
+          "Handicrafts",
+          "Folk items"
+        ],
+        "revenue_streams": [
+          "Art tourism",
+          "Cultural demonstrations",
+          "Craft sales",
+          "Homestays"
+        ],
+        "best_time_to_visit": "October - February",
+        "approx_distance_from_district_hq_km": 52
+      },
+      {
+        "village_name": "Rayagada Sadar",
+        "category": "Heritage",
+        "short_description": "District market town with tribal heritage and agricultural commerce.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Visit weekly tribal haats",
+          "Learn traditional trading",
+          "Interact with tribes",
+          "Explore local culture"
+        ],
+        "local_products": [
+          "Tribal handicrafts",
+          "Agricultural produce",
+          "Local food items",
+          "Handwoven textiles"
+        ],
+        "revenue_streams": [
+          "Market trading",
+          "Tribal culture tourism",
+          "Craft sales",
+          "Agricultural commerce"
+        ],
+        "best_time_to_visit": "October - March",
+        "approx_distance_from_district_hq_km": 5
+      },
+      {
+        "village_name": "Bissamcuttack",
+        "category": "Heritage",
+        "short_description": "Historic village with ancient temples and traditional crafts.",
+        "images": [
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png",
+          "images/travel.png"
+        ],
+        "experiences": [
+          "Explore ancient temples",
+          "Learn local history",
+          "View traditional crafts",
+          "Attend religious events"
+        ],
+                "local_products": [
+                  "Religious souvenirs",
+                  "Local handicrafts",
+                  "Pottery items",
+                  "Traditional food items"
+                ],
+                "revenue_streams": [
+                  "Heritage tourism",
+                  "Temple donations",
+                  "Souvenir sales",
+                  "Craft sales"
+                ],
+                "best_time_to_visit": "October - February",
+                "approx_distance_from_district_hq_km": 42
+              }
+            ]
+          }
+        ]

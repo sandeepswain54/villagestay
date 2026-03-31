@@ -155,9 +155,8 @@ class _OpenstreetState extends State<Openstreet> {
                   children: [
                     TileLayer(
                       urlTemplate:
-                          "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-                      userAgentPackageName:
-                          'com.upyogi.service_app', // ✅ important for OSM
+                          "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                      subdomains: const ['a', 'b', 'c'],
                     ),
                     CurrentLocationLayer(
                       style: LocationMarkerStyle(
